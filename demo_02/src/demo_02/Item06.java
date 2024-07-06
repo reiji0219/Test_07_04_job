@@ -1,17 +1,13 @@
 package demo_02;
 
 import java.util.function.Consumer;
-
 import umejava_05_01.Interface;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
 
 public class Item06 implements Interface
-{
-	@Override
-	public void execute() {
-		indi( "Lambda" );
-		
-	}
-	
+{	
 	private String id;
 	private String name;
 	private double price;
@@ -69,6 +65,61 @@ public class Item06 implements Interface
 	
 	public static void indi( String s0 ) {
 		System.out.println( s0 );
+	}
+	@Override
+	public void execute() {
+		indi( "Lambda" );
+	
+		ArrayList<String> animals = new ArrayList<>( Arrays.asList( "Dog" ));
+		
+		ArrayList<String> animal = new ArrayList<>();
+			animal.add( "Cat" );
+			animal.add( "Lion" );
+			animal.add( "Phoenix" );
+			
+			animals.addAll( animal );
+			
+		String getAnimal = animals.get( 3 );
+			indi( getAnimal );
+			
+			animals.set( 3, "Fox" );
+		
+			animals.remove( 2 );
+			animals.add( 2, "Penguin" );
+			
+			Iterator<String> itera = animals.iterator();
+			while( itera.hasNext()) {
+				String hoge = itera.next();
+					indi( hoge );
+			}
+			
+		ArrayList<Integer> seq = new ArrayList<Integer>();
+		
+		for( int i = 0; i < 5; i++ ) {
+			int number = new java.util.Random().nextInt( 4 ) + 1;
+				seq.add( number );
+		}
+		
+		for( int i : seq ) {
+			char[] base = { ' ', 'A', 'G', 'T', 'C' };
+				System.out.print( base[ i ] );
+		}
+			indi( " " );
+		
+		int num = new java.util.Random().nextInt( 10 ) + 1;
+		
+		String str = ( ( num % 2 ) == 0 )? ( ( num % 3 ) == 0 )?
+								"true/true" : "true/false"
+						:( ( num % 3 ) == 0 )?
+								"false/true" : "false/false" ;
+			indi( num + " " + str );
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 }

@@ -16,12 +16,6 @@ public class Test_07_06_home
 			
 		});
 		
-		
-			
-		
-
-		
-		
 	}
 	
 }
