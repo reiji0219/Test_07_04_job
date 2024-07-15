@@ -10,43 +10,6 @@ import umejava_05_01.Interface;
 
 public class Item09 implements Interface
 {
-	@Override
-	public void execute() {
-		indi( "Lambda" );
-		
-		ArrayList<String> animals = new ArrayList<String>( Arrays.asList( "Dog" ));
-		
-		ArrayList<String> animal = new ArrayList<String>();
-			animal.add( "Cat" );
-			animal.add( "Lion" );
-			animal.add( "Penguin" );
-			
-			animals.addAll( animal );
-			
-		String getAnimal = animals.get( 3 );
-			indi( getAnimal );
-			
-			animals.set( 3, "Phoenix" );
-			
-			animals.remove( 0 );
-			animals.add( 0, "Fox" );
-			
-		Comparator<String> compa = new Comparator<>() {
-			public int compare( String o1, String o2 ){
-				return( o2.compareTo( o1 ));
-			}
-		};
-			
-		Collections.sort( animals, compa );
-			
-		Iterator<String> itera = animals.iterator();
-		while( itera.hasNext()) {
-			String hoge = itera.next();
-				indi( hoge );
-		}
-		
-		
-	}
 	
 	private String id;
 	private String name;
@@ -98,9 +61,57 @@ public class Item09 implements Interface
 		return( price * tax );
 	}
 	
-	
-	
-	
+	@Override
+	public void execute() {
+		indi( "Lambda" );
+		
+		ArrayList<String> animals = new ArrayList<String>( Arrays.asList( "Dog" ));
+		
+		ArrayList<String> animal = new ArrayList<String>();
+			animal.add( "Cat" );
+			animal.add( "Lion" );
+			animal.add( "Penguin" );
+			
+			animals.addAll( animal );
+			
+		String getAnimal = animals.get( 3 );
+			indi( getAnimal );
+			
+			animals.set( 3, "Phoenix" );
+			
+			animals.remove( 0 );
+			animals.add( 0, "Fox" );
+			
+		Comparator<String> compa = new Comparator<>() {
+			public int compare( String o1, String o2 ){
+				return( o2.compareTo( o1 ));
+			}
+		};
+			
+		Collections.sort( animals, compa );
+			
+		Iterator<String> itera = animals.iterator();
+		while( itera.hasNext()) {
+			String hoge = itera.next();
+				indi( hoge );
+		}
+		
+		ArrayList<Integer> seq = new ArrayList<Integer>();
+		
+		for( int i = 0; i < 5; i++ ) {
+			int number = new java.util.Random().nextInt( 4 ) + 1;
+				seq.add( number );
+		}
+		
+		for( int i : seq ) {
+			char[] base = { ' ', 'A', 'G', 'T', 'C' };
+				System.out.print( base[ i ] );
+		}
+		indi( "" );
+		
+		
+		
+	}
 	
 	@Override
 	public String toString() {
