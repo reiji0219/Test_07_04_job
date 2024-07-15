@@ -25,6 +25,7 @@ public class Calc09 extends Item09
 				
 				item.display();
 
+				item.execute();
 			});
 
 		};
