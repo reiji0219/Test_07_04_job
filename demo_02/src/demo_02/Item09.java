@@ -1,5 +1,10 @@
 package demo_02;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.function.Consumer;
 import umejava_05_01.Interface;
 
@@ -8,6 +13,39 @@ public class Item09 implements Interface
 	@Override
 	public void execute() {
 		indi( "Lambda" );
+		
+		ArrayList<String> animals = new ArrayList<String>( Arrays.asList( "Dog" ));
+		
+		ArrayList<String> animal = new ArrayList<String>();
+			animal.add( "Cat" );
+			animal.add( "Lion" );
+			animal.add( "Penguin" );
+			
+			animals.addAll( animal );
+			
+		String getAnimal = animals.get( 3 );
+			indi( getAnimal );
+			
+			animals.set( 3, "Phoenix" );
+			
+			animals.remove( 0 );
+			animals.add( 0, "Fox" );
+			
+		Comparator<String> compa = new Comparator<>() {
+			public int compare( String o1, String o2 ){
+				return( o2.compareTo( o1 ));
+			}
+		};
+			
+		Collections.sort( animals, compa );
+			
+		Iterator<String> itera = animals.iterator();
+		while( itera.hasNext()) {
+			String hoge = itera.next();
+				indi( hoge );
+		}
+		
+		
 	}
 	
 	private String id;
