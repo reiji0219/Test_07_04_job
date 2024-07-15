@@ -109,6 +109,15 @@ public class Item09 implements Interface
 		}
 		indi( "" );
 		
+		int num = new java.util.Random().nextInt( 10 ) + 1;
+		
+		String str = ( ( num % 2 ) == 0 ) ? ( ( num % 3 ) == 0 ) ? 
+							"true/true" : "true/false"
+					  :( ( num % 3 ) == 0 ) ?
+							"false/true" : "false/false" ;  
+			indi( num + " " + str );
+							  
+		
 		
 		
 	}
