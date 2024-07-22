@@ -1,7 +1,5 @@
 package demo_02;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.function.Consumer;
 import umejava_05_01.Interface;
 
