@@ -13,7 +13,6 @@ public class Test_07_30_home
 				Interface save = Calc30.create();
 					save.execute();
 				
-				
 			});
 			
 		
